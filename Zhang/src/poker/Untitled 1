@@ -1,0 +1,69 @@
+This file contains the code to previously written for discard method in PokerPlayer, however some error occur using scanner trying to get answer
+from user, therefore this code is overwritten but left for future adjustments
+
+//	int state = 0;
+//	int cases = 0;
+//	PlayingCard Card;
+//	
+//	if(discardNum == MAX_DISCARD_NUM){	//if discard number already equals to MAX_DISCARD_NUM then no more card can be discarded
+//		System.out.println("You already discarded 3 cards, no more card can be discarded");
+//	}
+//	
+//	while(discardNum < MAX_DISCARD_NUM){	//loops if and only if the amount of card discarded is less than MAX_DISCARD_NUM
+//		System.out.println("Which card would you like to discard?(0 - 4)");
+//		int cardPosition = reader.nextInt();
+//		maxProbOfHand = checkLargestProbToDiscard();
+//		
+//		while(Hand.getDiscardProbability(cardPosition) < maxProbOfHand){	//situation occur if card chosen by user not the best
+//																			//card, other card with higher probability to discard
+//			System.out.println("There are card with higher probability to discard, "
+//					+ "do you still wish to discard current chosen card? (Y/N)");	//ask user to confirm their decision
+//			String answer = reader.nextLine();
+//			System.out.println(answer);
+//			
+//			if(answer == "N"){
+//				state = 1;	//if user do wish to change card, set state to 1
+//				break;	//breaks the while loop
+//			}
+//			else if(answer == "Y"){
+//				break;	//breaks the while loop
+//			}
+//			else{
+//				System.out.println("Invalid input!");
+//				continue;	//loops again because of invalid input
+//			}
+//		}
+//		
+//		if(state == 1){	//loops again because user wish to change card to discard
+//			continue;
+//		}
+//		
+//		else if(state == 0){	//user wish to discard current chosen card
+//			Card = CardDeck.dealNext();	//deals card from deck
+//			CardDeck.returnCard(CardHand[cardPosition]);	//return discarded card to deck
+//			CardHand[cardPosition] = Card;	//add deal card into card hand
+//			discardNum++;	//increase discard number
+//			Hand.setHand(CardHand[0], CardHand[1], CardHand[2], CardHand[3], CardHand[4]);	//set card hand
+//			
+//			while(cases == 0){	//ask user if wish to discard more card
+//				System.out.println("Would you like to discard more cards? (Y/N)");
+//				String answer = reader.nextLine();
+//				System.out.println(answer);
+//				if(answer == "N"){
+//					cases = 1;	//change case to 1 and breaks loop
+//					break;
+//				}
+//				else if(answer == "Y"){
+//					break;	//case not changed and breaks loop
+//				}
+//				else{
+//					System.out.println("Invalid input!");
+//					continue;	//loops again because of invalid input
+//				}
+//			}
+//			
+//			if(state == 1){	//user does not wish to discard more card
+//				break;
+//			}
+//		}
+//	}
